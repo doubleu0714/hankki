@@ -92,22 +92,22 @@ spec:
 			//RECIPE_APP = "hankki-recipe"
 			 sh """
 			 cd ${AUTH_APP}
-			 sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/${PROJECT}/${AUTH_APP}:${env.BRANCH_NAME}.${env.BUILD_NUMBER} .
+			 sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/${PROJECT}/${AUTH_APP}:${env.BRANCH_NAME}.${env.BUILD_NUMBER} ."
 			 cd ..
 			 """
 			 sh """
 			 cd ${MATERIAL_APP}
-			 sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/${PROJECT}/${MATERIAL_APP}:${env.BRANCH_NAME}.${env.BUILD_NUMBER} .
+			 sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/${PROJECT}/${MATERIAL_APP}:${env.BRANCH_NAME}.${env.BUILD_NUMBER} ."
 			 cd ..
 			 """
 			 sh """
 			 cd ${MYRECIPE_APP}
-			 sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/${PROJECT}/${MYRECIPE_APP}:${env.BRANCH_NAME}.${env.BUILD_NUMBER} .
+			 sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/${PROJECT}/${MYRECIPE_APP}:${env.BRANCH_NAME}.${env.BUILD_NUMBER} ."
 			 cd ..
 			 """
 			 sh """
 			 cd ${RECIPE_APP}
-			 sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/${PROJECT}/${RECIPE_APP}:${env.BRANCH_NAME}.${env.BUILD_NUMBER} .
+			 sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/${PROJECT}/${RECIPE_APP}:${env.BRANCH_NAME}.${env.BUILD_NUMBER} ."
 			 cd ..
 			 """
          }
@@ -129,8 +129,8 @@ spec:
           step([$class: 'KubernetesEngineBuilder',namespace:env.NAMESPACE, projectId: env.PROJECT, clusterName: env.CLUSTER, zone: env.CLUSTER_ZONE, manifestPattern: 'k8s/deploy', credentialsId: env.JENKINS_CRED, verifyDeployments: false])
 		  step([$class: 'KubernetesEngineBuilder',namespace:env.NAMESPACE, projectId: env.PROJECT, clusterName: env.CLUSTER, zone: env.CLUSTER_ZONE, manifestPattern: 'k8s/service', credentialsId: env.JENKINS_CRED, verifyDeployments: false])
 		  step([$class: 'KubernetesEngineBuilder',namespace:env.NAMESPACE, projectId: env.PROJECT, clusterName: env.CLUSTER, zone: env.CLUSTER_ZONE, manifestPattern: 'k8s/ingress', credentialsId: env.JENKINS_CRED, verifyDeployments: false])
-		  
-		  sh("echo http://`kubectl --namespace=${NAMESPACE} get ingress/hankki-ingress -o jsonpath='{.status.loadBalancer.ingress[0].ip}'` > HANKKI")
+		  sh("sleep 30")
+		  sh("echo http://`kubectl --namespace=${NAMESPACE} get ingress/hankki-ingress -o jsonpath='{.status.loadBalancer.ingress[0].ip}'` ")
 		  
        }
       }
