@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: hankki-material
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: hankki-material
+      labels:
+        app: hankki-material
+    spec:
+      containers:
+      - name: hankki-material
+        image: gcr.io/eunbyul/hankki-material:v1
+        imagePullPolicy: Always
+        command: ["java", "-jar", "hankki-material-0.0.1-SNAPSHOT.jar"]
+        ports:
+        - name: hankki-material
+          containerPort: 8081
+
