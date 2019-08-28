@@ -14,6 +14,14 @@ spec:
       - name: hankki-myrecipe
         image: gcr.io/eunbyul/hankki-myrecipe:v1
         imagePullPolicy: Always
+        readinessProbe:
+          httpGet:
+             path: /api/myrecipes/hello
+             port: 8082
+        livenessProbe:
+          httpGet:
+             path: /api/myrecipes/hello
+             port: 8082
         command: ["java", "-jar", "hankki-myrecipe-0.0.1-SNAPSHOT.jar"]
         ports:
         - name: hankki-myrecipe

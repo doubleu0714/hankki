@@ -14,6 +14,14 @@ spec:
       - name: hankki-auth
         image: gcr.io/eunbyul/hankki-auth:v1
         imagePullPolicy: Always
+        readinessProbe:
+          httpGet:
+             path: /api/auth/hello
+             port: 8080
+        livenessProbe:
+          httpGet:
+             path: /api/auth/hello
+             port: 8080
         command: ["java", "-jar", "hankki-auth-0.0.1-SNAPSHOT.jar"]
         ports:
         - name: hankki-auth
