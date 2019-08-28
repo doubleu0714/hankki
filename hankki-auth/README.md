@@ -1,9 +1,5 @@
 # 한끼 인증 서비스
 ## DB 설정
-### 인증 서비스 DB 생성
-```
-CREATE DATABASE hankkiauth;
-CREATE USER 'hankkiauth'@'%' IDENTIFIED BY 'hankkiauth';
-GRANT ALL PRIVILEGES ON hankkiauth.* TO 'hankkiauth'@'%';
-SHOW GRANTS FOR 'hankkiauth'@'%';
-```
+### 인증 서비스 DB
+h2 콘솔 : http://localhost:8080/api/auth/db/hankkiauth
+JDBC URL : jdbc:h2:mem:hankkiauth
