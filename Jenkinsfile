@@ -92,21 +92,25 @@ spec:
 			//RECIPE_APP = "hankki-recipe"
 			 sh """
 			 cd ${AUTH_APP}
+             rm .gitignore
 			 sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/${PROJECT}/${AUTH_APP}:${env.BRANCH_NAME}.${env.BUILD_NUMBER} ."
 			 cd ..
 			 """
 			 sh """
 			 cd ${MATERIAL_APP}
+             rm .gitignore
 			 sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/${PROJECT}/${MATERIAL_APP}:${env.BRANCH_NAME}.${env.BUILD_NUMBER} ."
 			 cd ..
 			 """
 			 sh """
 			 cd ${MYRECIPE_APP}
+             rm .gitignore
 			 sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/${PROJECT}/${MYRECIPE_APP}:${env.BRANCH_NAME}.${env.BUILD_NUMBER} ."
 			 cd ..
 			 """
 			 sh """
 			 cd ${RECIPE_APP}
+             rm .gitignore
 			 sh "PYTHONUNBUFFERED=1 gcloud builds submit -t gcr.io/${PROJECT}/${RECIPE_APP}:${env.BRANCH_NAME}.${env.BUILD_NUMBER} ."
 			 cd ..
 			 """
