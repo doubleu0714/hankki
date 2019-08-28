@@ -1,5 +1,5 @@
 # 한끼 식자재 서비스
 ## DB 설정
 ### 인증 서비스 DB
-h2 콘솔 : http://localhost:8080/api/auth/db/hankkimyrecipe
+h2 콘솔 : http://localhost:8080/api/auth/db/hankkimyrecipe  
 JDBC URL : jdbc:h2:mem:hankkimyrecipe
