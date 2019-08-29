@@ -14,6 +14,8 @@ import io.hankki.myrecipe.domain.model.Myrecipe;
 	@RepositoryRestResource
 	public interface MyrecipeRepository extends JpaRepository<Myrecipe, Long>,
 												QueryDslPredicateExecutor<Myrecipe>{
-		Myrecipe findByUserid(@Param("userid") String userid);
+		Myrecipe findById(@Param("id") Long id);
+		List<Myrecipe> findByUserid(@Param("userid") String userid);
 		List<Myrecipe> findAll(Predicate predicate);
+		List<Myrecipe> findByUseridLike(@Param("userid") String userid);
 	}

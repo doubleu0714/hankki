@@ -1,1 +1,9 @@
-insert into myrecipe(id, recipeid, selecteddate, userid) values (1, 1, '2019-08-28','test1')
+insert into myrecipe(id, recipeid, selecteddate, userid) values (1, 1, '2019-07-28','test1');
+insert into myrecipe(id, recipeid, selecteddate, userid) values (2, 2, '2019-08-01','test1');
+insert into myrecipe(id, recipeid, selecteddate, userid) values (3, 3, '2019-08-28','test1');
+insert into myrecipe(id, recipeid, selecteddate, userid) values (4, 1, '2018-01-28','test2');
+insert into myrecipe(id, recipeid, selecteddate, userid) values (5, 2, '2019-08-28','test2');
+insert into myrecipe(id, recipeid, selecteddate, userid) values (6, 1, '2017-11-28','test3');
+insert into myrecipe(id, recipeid, selecteddate, userid) values (7, 2, '2018-03-09','test3');
+insert into myrecipe(id, recipeid, selecteddate, userid) values (8, 3, '2019-05-05','test3');
+insert into myrecipe(id, recipeid, selecteddate, userid) values (9, 4, '2019-08-28','test3');

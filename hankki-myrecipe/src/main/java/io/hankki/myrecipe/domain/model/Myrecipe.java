@@ -12,8 +12,8 @@ import lombok.Data;
 public class Myrecipe {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	public Long id;
-	public String userid;
+	private Long id;
+	private String userid;
 	private String recipeid;
 	private String selecteddate;
 	
