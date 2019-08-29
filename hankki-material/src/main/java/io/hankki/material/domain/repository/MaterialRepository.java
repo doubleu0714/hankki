@@ -17,6 +17,7 @@ public interface MaterialRepository extends JpaRepository<Material, Long>,
 											QueryDslPredicateExecutor<Material>{
 	List<Material> findAll(Predicate predicate);
 	List<Material> findByMaterialCategory(@Param("materialCategory") MaterialCategory materialCategory);
+	List<Material> findByMaterialIdIn(@Param("materialIdList") List<Long> materialIdList);
 	
 
 }
