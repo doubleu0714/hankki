@@ -5,7 +5,9 @@ metadata:
 spec:
   selector:
     app: hankki-recipe
-  type: NodePort
+  #type: NodePort
+  ##확인을 위해 임시설정
+  type: LoadBalancer
   ports:
     - name: http
       port: 8083
