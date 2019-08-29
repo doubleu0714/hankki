@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hankki-ingress
+spec:
+#   backend:
+#     serviceName: spring-boot-journal
+#     servicePort: 12000
+  rules:
+  - http:
+      paths:
+      - path: /api/auth/*
+        backend:
+          serviceName: hankki-auth
+          servicePort: 8080
+      - path: /api/materials/*
+        backend:
+          serviceName: hankki-material
+          servicePort: 8081
+      - path: /api/myrecipes/*
+        backend:
+          serviceName: hankki-myrecipe
+          servicePort: 8082
+      - path: /api/recipes/*
+        backend:
+          serviceName: hankki-recipe
+          servicePort: 8083

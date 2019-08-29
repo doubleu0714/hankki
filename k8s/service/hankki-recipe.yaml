@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hankki-recipe
+spec:
+  selector:
+    app: hankki-recipe
+  type: NodePort
+  ports:
+    - name: http
+      port: 8083
+      protocol: TCP
+      targetPort: 8083

@@ -1,0 +1,29 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: hankki-auth
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: hankki-auth
+      labels:
+        app: hankki-auth
+    spec:
+      containers:
+      - name: hankki-auth
+        image: gcr.io/eunbyul/hankki-auth:v1
+        imagePullPolicy: Always
+        readinessProbe:
+          httpGet:
+             path: /api/auth/hello
+             port: 8080
+        livenessProbe:
+          httpGet:
+             path: /api/auth/hello
+             port: 8080
+        command: ["java", "-jar", "hankki-auth-0.0.1-SNAPSHOT.jar"]
+        ports:
+        - name: hankki-auth
+          containerPort: 8080
+

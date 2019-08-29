@@ -1,0 +1,29 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: hankki-myrecipe
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: hankki-myrecipe
+      labels:
+        app: hankki-myrecipe
+    spec:
+      containers:
+      - name: hankki-myrecipe
+        image: gcr.io/eunbyul/hankki-myrecipe:v1
+        imagePullPolicy: Always
+        readinessProbe:
+          httpGet:
+             path: /api/myrecipes/hello
+             port: 8082
+        livenessProbe:
+          httpGet:
+             path: /api/myrecipes/hello
+             port: 8082
+        command: ["java", "-jar", "hankki-myrecipe-0.0.1-SNAPSHOT.jar"]
+        ports:
+        - name: hankki-myrecipe
+          containerPort: 8082
+
