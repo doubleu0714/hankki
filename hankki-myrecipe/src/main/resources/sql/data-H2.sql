@@ -1,0 +1,1 @@
+insert into myrecipe(id, recipeid, selecteddate, userid) values (1, 1, '2019-08-28','test1')
