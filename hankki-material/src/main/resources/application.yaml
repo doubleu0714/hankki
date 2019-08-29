@@ -1,6 +1,7 @@
 ### Context root path ########
 server: 
   port: 8081
+  context-path: /api/materials
   servlet:
     context-path: /api/materials
 spring:
