@@ -15,11 +15,11 @@ import io.hankki.recipe.domain.model.RecipeCategory;
 public interface RecipeCategoryRepository extends JpaRepository<RecipeCategory, Long>{
  	
  	 //1. Category 조회하는 쿼리
-//	@Query("select a from Recipe a where recipeCategoryType = :recipeCategoryType")
+//	@Query("select a from RecipeCategory a where RecipeCategoryId = :RecipeCategoryId")
 	List<RecipeCategory> findByRecipeCategoryId(@Param("RecipeCategoryId") Long RecipeCategoryId);
-	 //2. 식재료 별로 조회하는 쿼리
-//	@Query("select a from Recipe a where category = :category")
-//	List<Recipe> findBymaterialName (@Param("materialName") String materialName);
+	 //2. Category 명으로 조회하는 쿼리
+//	@Query("select a from RecipeCategory a where category = :category")
+	List<RecipeCategory> findByRecipeCategoryName (@Param("RecipeCategoryName") String RecipeCategoryName);
 	
 	 //3. 카테고리와 식재료로 조회하는 쿼리
 //	@Query("select a from Recipe a where category = :category and  recipeCategoryType = :recipeCategoryType ")
