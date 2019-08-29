@@ -1,7 +1,9 @@
 ### Context root path ########
-server: 
-  servlet:
-    context-path: /api/auth
+jwt:
+  secret: javainuse
+# server: 
+#   servlet:
+#     context-path: /api/auth
 spring:
   profiles:
     active: local
@@ -22,3 +24,14 @@ spring:
       ddl-auto: create
       naming: 
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+zuul:
+  routes:
+    material:
+      path: /api/materials/**
+      url: http://localhost:8081/api/materials
+    myrecipe:
+      path: /api/myrecipes/**
+      url: http://localhost:8082/api/myrecipes
+    recipe:
+      path: /api/recipes/**
+      url: http://localhost:8083/api/recipes  
