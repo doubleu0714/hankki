@@ -15,19 +15,19 @@ import io.hankki.recipe.domain.model.RecipeCategoryType;
 public interface RecipeRepository extends JpaRepository<Recipe, Long>{
  	
  	 //1. 카테고리별로 조회하는 쿼리
-	@Query("select a from Recipe a where recipeCategoryType = :recipeCategoryType")
-	List<Recipe> findByrecipeCategoryType(@Param("recipeCategoryType") RecipeCategoryType recipeCategoryType);
+	//@Query("select a from Recipe a where recipeCategoryType = :recipeCategoryType")
+	List<Recipe> findByRecipeCategoryType(@Param("recipeCategoryType") RecipeCategoryType recipeCategoryType);
 	
 	 //2. 식재료 별로 조회하는 쿼리
-	@Query("select a from Recipe a where category = :category")
-	List<Recipe> findBymaterialName (@Param("materialName") String materialName);
+	//@Query("select a from Recipe a where category = :category")
+	//List<Recipe> findBymaterialName (@Param("materialName") String materialName);
 	
 	 //3. 카테고리와 식재료로 조회하는 쿼리
-	@Query("select a from Recipe a where category = :category and  recipeCategoryType = :recipeCategoryType ")
-	List<Recipe> findBymaterialName (@Param("materialName") String materialName, @Param("recipeCategoryType") RecipeCategoryType recipeCategoryType );
+	//@Query("select a from Recipe a where category = :category and  recipeCategoryType = :recipeCategoryType ")
+	//List<Recipe> findBymaterialName (@Param("materialName") String materialName, @Param("recipeCategoryType") RecipeCategoryType recipeCategoryType );
 
 	//4.전체 건 조회
-	@Query("select a from Recipe")
-	List<Recipe> findAll();
+	//@Query("select a from Recipe")
+	//List<Recipe> findAll();
 	
 } 

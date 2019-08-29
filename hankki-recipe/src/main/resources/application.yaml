@@ -13,6 +13,7 @@ spring:
   datasource:
     url: jdbc:h2:mem:hankkirecipe
     driverClassName: org.h2.Driver
+    data: classpath:sql/data-H2-recipe.sql
   h2:
     console:
       enabled: true

@@ -1,0 +1,1 @@
+insert into Recipe  ( recipeId, recipeName, recipeCategoryType, recipeDescription, cookingTime, calory )  values ( null, '돼지김치찌개', '한식','김치찌개', 30, 200)

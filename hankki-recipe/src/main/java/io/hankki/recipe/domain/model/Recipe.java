@@ -22,6 +22,7 @@ public class Recipe  {
 	@Enumerated(EnumType.STRING)
 	private RecipeCategoryType recipeCategoryType;
 	
+	private String recipeDescription;
 	private Long cookingTime;
 	private Long calory;
 	
