@@ -23,7 +23,7 @@ spec:
              path: /api/recipes/hello
              port: 8083
           initialDelaySeconds: 60
-        timeoutSeconds: 60
+          timeoutSeconds: 60
         command: ["java", "-jar", "hankki-recipe-0.0.1-SNAPSHOT.jar"]
         ports:
         - name: hankki-recipe

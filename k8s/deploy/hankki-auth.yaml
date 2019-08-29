@@ -23,7 +23,7 @@ spec:
              path: /api/auth/hello
              port: 8080
           initialDelaySeconds: 60
-        timeoutSeconds: 60
+          timeoutSeconds: 60
         command: ["java", "-jar", "hankki-auth-0.0.1-SNAPSHOT.jar"]
         ports:
         - name: hankki-auth
