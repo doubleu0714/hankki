@@ -9,7 +9,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /api/auth/*
+      - path: /api/*
         backend:
           serviceName: hankki-auth
           servicePort: 8080
