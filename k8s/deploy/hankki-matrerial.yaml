@@ -12,16 +12,16 @@ spec:
     spec:
       containers:
       - name: hankki-material
-        image: gcr.io/eunbyul/hankki-material:master.6
+        image: gcr.io/eunbyul/hankki-material:v1
         imagePullPolicy: Always
         readinessProbe:
           httpGet:
              path: /api/materials/hello
              port: 8081
-             #livenessProbe:
-             #httpGet:
-             #path: /api/materials/hello
-             #port: 8081
+        livenessProbe:
+             httpGet:
+             path: /api/materials/hello
+             port: 8081
         command: ["java", "-jar", "hankki-material-0.0.1-SNAPSHOT.jar"]
         ports:
         - name: hankki-material
