@@ -23,7 +23,7 @@ public class RecipeCategory  {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long recipeCategoryId;
 	private String recipeCategoryName;
-//	private String recommendCategory;
+	private String recommendCategory;
 	
 	
 	
