@@ -27,6 +27,7 @@ public class Recipe  {
 	@Enumerated(EnumType.STRING)
 	private RecipeCategoryType recipeCategoryType;
 	
+	private String recipeDescription;
 	private Long cookingTime;
 	private Long calory;
 	
@@ -35,14 +36,5 @@ public class Recipe  {
 	List<RecipeMaterial> materials;
 	
 	
-//	
-//	public recipe(String recipeId, String recipeName, recipeCategoryType recipeCategoryType, Long cookingTime,  Long calory) { 
-//		 		this.recipeId 			= recipeId; 
-//		 		this.recipeName 		= recipeName; 
-//		 		this.recipeCategoryType = recipeCategoryType;
-//		 		this.cookingTime 		= cookingTime; 
-//		 		this.calory			 	= calory; 
-//		 
-//		 	} 
 
 }
