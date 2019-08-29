@@ -13,15 +13,15 @@ spec:
         backend:
           serviceName: hankki-auth
           servicePort: 8080
-      - path: /api/materials/*
-        backend:
-          serviceName: hankki-material
-          servicePort: 8081
-      - path: /api/myrecipes/*
-        backend:
-          serviceName: hankki-myrecipe
-          servicePort: 8082
-      - path: /api/recipes/*
-        backend:
-          serviceName: hankki-recipe
-          servicePort: 8083
+    #   - path: /api/materials/*
+    #     backend:
+    #       serviceName: hankki-material
+    #       servicePort: 8081
+    #   - path: /api/myrecipes/*
+    #     backend:
+    #     serviceName: hankki-myrecipe
+    #     servicePort: 8082
+    #   - path: /api/recipes/*
+    #     backend:
+    #       serviceName: hankki-recipe
+    #       servicePort: 8083

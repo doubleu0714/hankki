@@ -1,6 +1,7 @@
 ### Context root path ########
 server: 
   port: 8081
+  context-path: /api/materials
   servlet:
     context-path: /api/materials
 spring:
@@ -12,6 +13,7 @@ spring:
   datasource:
     url: jdbc:h2:mem:hankkimaterials
     driverClassName: org.h2.Driver
+    data: classpath:sql/data-H2.sql
   h2:
     console:
       enabled: true
@@ -19,7 +21,13 @@ spring:
   jpa: 
     generate-ddl: true
     show-sql: true
+    format_sql: true
+    sql_comments: true
     hibernate: 
       ddl-auto: create
       naming: 
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        
+logging:
+  level:
+    org.hibernate.type: info

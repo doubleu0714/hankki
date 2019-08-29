@@ -133,8 +133,12 @@ spec:
           step([$class: 'KubernetesEngineBuilder',namespace:env.NAMESPACE, projectId: env.PROJECT, clusterName: env.CLUSTER, zone: env.CLUSTER_ZONE, manifestPattern: 'k8s/deploy', credentialsId: env.JENKINS_CRED, verifyDeployments: false])
 		  step([$class: 'KubernetesEngineBuilder',namespace:env.NAMESPACE, projectId: env.PROJECT, clusterName: env.CLUSTER, zone: env.CLUSTER_ZONE, manifestPattern: 'k8s/service', credentialsId: env.JENKINS_CRED, verifyDeployments: false])
 		  step([$class: 'KubernetesEngineBuilder',namespace:env.NAMESPACE, projectId: env.PROJECT, clusterName: env.CLUSTER, zone: env.CLUSTER_ZONE, manifestPattern: 'k8s/ingress', credentialsId: env.JENKINS_CRED, verifyDeployments: false])
-		  sh("sleep 30")
+		  //sh("sleep 30")
 		  sh("echo http://`kubectl --namespace=${NAMESPACE} get ingress/hankki-ingress -o jsonpath='{.status.loadBalancer.ingress[0].ip}'` ")
+          sh("kubectl -n hankki get deploy")
+          sh("kubectl -n hankki get service")
+          sh("kubectl -n hankki get ingress")
+          sh("kubectl -n hankki describe ingress/hankki-ingress")
 		  
        }
       }
