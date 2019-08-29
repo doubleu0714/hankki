@@ -22,6 +22,8 @@ spec:
           httpGet:
              path: /api/myrecipes/hello
              port: 8082
+          initialDelaySeconds: 60
+        timeoutSeconds: 60
         command: ["java", "-jar", "hankki-myrecipe-0.0.1-SNAPSHOT.jar"]
         ports:
         - name: hankki-myrecipe
