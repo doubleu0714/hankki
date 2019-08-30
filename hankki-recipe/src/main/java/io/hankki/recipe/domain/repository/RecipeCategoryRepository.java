@@ -7,7 +7,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import io.hankki.recipe.domain.model.Recipe;
 import io.hankki.recipe.domain.model.RecipeCategory;
+import io.hankki.recipe.domain.model.RecipeCategoryType;
 
 
 
@@ -20,6 +22,7 @@ public interface RecipeCategoryRepository extends JpaRepository<RecipeCategory, 
 	 //2. Category 명으로 조회하는 쿼리
 //	@Query("select a from RecipeCategory a where category = :category")
 	List<RecipeCategory> findByRecipeCategoryName (@Param("RecipeCategoryName") String RecipeCategoryName);
+//	List<RecipeCategory> findByRecipeCategoryName (@Param("recipeCategoryType") RecipeCategoryType recipeCategoryType);
 	
 	 //3. 카테고리와 식재료로 조회하는 쿼리
 //	@Query("select a from Recipe a where category = :category and  recipeCategoryType = :recipeCategoryType ")
