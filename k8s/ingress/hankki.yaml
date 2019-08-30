@@ -3,16 +3,16 @@ kind: Ingress
 metadata:
   name: hankki-ingress
 spec:
-   backend:
-     serviceName: hankki-auth
-     servicePort: 8080
-  rules:
-  - http:
-      paths:
-      - path: /api/*
-        backend:
-          serviceName: hankki-auth
-          servicePort: 8080
+  backend:
+    serviceName: hankki-auth
+    servicePort: 8080
+    #  rules:
+    #- http:
+    #  paths:
+    #  - path: /api/*
+    #    backend:
+    #      serviceName: hankki-auth
+    #      servicePort: 8080
     #   - path: /api/materials/*
     #     backend:
     #       serviceName: hankki-material
