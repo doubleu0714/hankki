@@ -1,6 +1,7 @@
 ### Context root path ########
 server: 
   port: 8082
+  context-path: /api/myrecipes
   servlet:
     context-path: /api/myrecipes
 spring:
@@ -12,6 +13,7 @@ spring:
   datasource:
     url: jdbc:h2:mem:hankkimyrecipe
     driverClassName: org.h2.Driver
+    data: classpath:sql/data-H2.sql
   h2:
     console:
       enabled: true

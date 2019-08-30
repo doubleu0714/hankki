@@ -20,6 +20,7 @@ public class HankkiUserController {
 
     @PostMapping("login")
     public ResponseEntity<String> login(@RequestBody HankkiUserDTO userDTO) {
+        System.out.println(userDTO);
         String token = userService.signIn(userDTO.getUserId(), userDTO.getUserPw());
         return ResponseEntity.ok(token);
     }
