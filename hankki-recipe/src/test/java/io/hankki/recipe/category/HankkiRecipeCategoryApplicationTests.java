@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.repository.query.Param;
 import org.springframework.test.context.junit4.SpringRunner;
 
 //import io.hankki.recipe.domain.model.Recipe;
@@ -23,25 +24,27 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class HankkiRecipeCategoryApplicationTests {
 
-//	@Autowired
-//	RecipeCategoryRepository repositorycategory;
+	@Autowired
+	RecipeCategoryRepository repositorycategory;
 	
 	@Test
 	public void contextLoads() {
 	}
-//	@Test
-//	public void findByRecipeCategoryTest () {
-//		log.info("findByRecipeCategoryName  START");
-//
-//		//String RecipeCategoryName="한식";
-//		List<RecipeCategory> recipeList = repositorycategory.findByRecipeCategoryName("한식");
-//		
-//		for(RecipeCategory recipe: recipeList) {
-//			log.info(recipe.toString());
-//		}
-//		
-//		assertThat(recipeList.size(), not(0));
-//
-//		log.info("findByRecipeCategoryName END");
-//	}
+	@Test
+	public void findByRecipeCategoryTest () {
+		log.info("findByRecipeCategoryName  START");
+
+		String RecipeCategoryName="한식";
+		List<RecipeCategory> recipeList = repositorycategory.findByRecipeCategoryName(RecipeCategoryName);
+		
+//		log.info(recipeList.get(0).toString());
+		for(RecipeCategory recipe: recipeList) {
+			log.info(recipe.toString());
+		}
+		
+		assertThat(recipeList.size(), not(0));
+
+		log.info("findByRecipeCategoryName END");
+	}
+	
 }

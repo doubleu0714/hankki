@@ -1,5 +1,5 @@
 --돼지김치찌개
-insert into Recipe ( recipeId, recipeName, recipeCategoryType, recipeDescription, cookingTime, calory ) values ( null, '돼지김치찌개', '한식','김치찌개', 30, 200)
+insert into Recipe ( recipeId, recipeName, recipeCategoryType, recipeDescription, cookingTime, calory ) values ( 1, '돼지김치찌개', '한식','김치찌개', 30, 200)
 insert into RecipeMaterial (id, mandantory, materialId, recipeId) values (1, 'true', 11, 1)
 insert into RecipeMaterial (id, mandantory, materialId, recipeId) values (2, 'true', 8, 1)
 insert into RecipeMaterial (id, mandantory, materialId, recipeId) values (3, 'false', 12, 1)
@@ -29,3 +29,8 @@ insert into RecipeMaterial (id, mandantory, materialId, recipeId) values (118, '
 insert into RecipeMaterial (id, mandantory, materialId, recipeId) values (119, 'TRUE', 19, 5)
 insert into RecipeMaterial (id, mandantory, materialId, recipeId) values (120, 'FALSE', 2, 5)
 insert into RecipeMaterial (id, mandantory, materialId, recipeId) values (121, 'FALSE', 20, 5)
+
+insert into RECIPECATEGORY values (null, '한식', '추천')
+insert into RECIPECATEGORY values (null, '양식', '추천')
+insert into RECIPECATEGORY values (null, '중식', '추천')
+insert into RECIPECATEGORY values (null, '기타', '추천')
