@@ -3,9 +3,9 @@ kind: Ingress
 metadata:
   name: hankki-ingress
 spec:
-#   backend:
-#     serviceName: spring-boot-journal
-#     servicePort: 12000
+   backend:
+     serviceName: hankki-auth
+     servicePort: 8080
   rules:
   - http:
       paths:
